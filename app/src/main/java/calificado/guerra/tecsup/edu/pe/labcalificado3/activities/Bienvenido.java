@@ -36,8 +36,8 @@ public class Bienvenido extends AppCompatActivity {
 
     public void ingresar(View view){
 
-        final String usuario=ingreseUsuario.getText().toString();
-        final String password=ingresePassword.getText().toString();
+        final String The_usuario=ingreseUsuario.getText().toString();
+         final String The_password=ingresePassword.getText().toString();
 
 
         ApiService service = ApiServiceGenerator.createService(ApiService.class);
@@ -58,6 +58,12 @@ public class Bienvenido extends AppCompatActivity {
                         Log.d(TAG, "usuarios: " + usuarios);
 
                         for (Usuario usuario:usuarios){
+                            if(usuario.getNombre()== The_usuario && usuario.getPassword()== The_password){
+
+                            }
+
+
+
                             Log.d("PRODUCTO : ",usuario.getNombre());
                         }
 
