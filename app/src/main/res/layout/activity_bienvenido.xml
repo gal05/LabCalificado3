@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="calificado.guerra.tecsup.edu.pe.labcalificado3.activities.Bienvenido">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_marginTop="80px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="Bienvemido a la App de denuncias :v " />
+
+        <EditText
+            android:id="@+id/ingrese_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Usuario"
+            android:layout_marginTop="50px"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/ingrese_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="50px"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/inciar_sesion"
+            android:layout_marginStart="320px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50px"
+            android:text="Iniciar Sesion"
+            android:onClick="ingresar"/>
+
+        <Button
+            android:id="@+id/Registro"
+            android:layout_marginStart="370px"
+            android:layout_marginTop="50px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro"
+            android:onClick="registrar"/>
+    </LinearLayout>
+
+</LinearLayout>
