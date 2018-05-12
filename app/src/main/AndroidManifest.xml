@@ -24,8 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.Bienvenido" />
-        <activity android:name=".activities.ListaDenuncia" />
-        <activity android:name=".activities.RegistroUsuario"></activity>
+        <activity android:name=".activities.ListaDenuncia"></activity>
     </application>
 
 </manifest>
