@@ -16,6 +16,7 @@ import calificado.guerra.tecsup.edu.pe.labcalificado3.response.ResponseMessage;
 import calificado.guerra.tecsup.edu.pe.labcalificado3.services.ApiService;
 import calificado.guerra.tecsup.edu.pe.labcalificado3.services.ApiServiceGenerator;
 import retrofit2.Call;
+import retrofit2.Callback;
 
 public class RegistroUsuario extends AppCompatActivity {
 
@@ -47,23 +48,72 @@ public class RegistroUsuario extends AppCompatActivity {
         String pass1=password1.getText().toString();
         String pass2=password2.getText().toString();
         int tipo=0;
-        if (!pass1.equals(pass2)){
-            Toast.makeText(this,"No coinciden los passwords",Toast.LENGTH_SHORT);
-            return;
-        }
+
         if (user.isEmpty()|| dni.isEmpty()||pass1.isEmpty()||pass2.isEmpty()){
             Toast.makeText(this,"Todos los campos son requeridos",Toast.LENGTH_SHORT);
             return;
         }
 
-
-
         ApiService service= ApiServiceGenerator.createService(ApiService.class);
 
         Call<ResponseMessage> call=null;
 
-        call=service.createUsuario(pass1,dni,user,tipo);
+        if(!pass1.equals(pass2)){
+            Toast.makeText(this,"No coinciden los passwords",Toast.LENGTH_SHORT);
+            return;
+        }else{
+            call=service.createUsuario(pass1,dni,user,tipo);
+        }
+        call.enqueue(new Callback<ResponseMessage>() {
+
+            @Override
+            public void onResponse(Call<ResponseMessage> call, retrofit2.Response<ResponseMessage> response) {
+                try {
+
+                    int statusCode = response.code();
+                    Log.d(TAG, "HTTP status code: " + statusCode);
+
+                    if (response.isSuccessful()) {
+
+                        ResponseMessage responseMessage = response.body();
+                        Log.d(TAG, "responseMessage: " + responseMessage);
+
+                        Toast.makeText(RegistroUsuario.this, responseMessage.getMessage(), Toast.LENGTH_LONG).show();
+                        finish();
+
+                    } else {
+                        Log.e(TAG, "onError: " + response.errorBody().string());
+                        throw new Exception("Error en el servicio");
+                    }
+
+                } catch (Throwable t) {
+                    try {
+                        Log.e(TAG, "onThrowable: " + t.toString(), t);
+                        Toast.makeText(RegistroUsuario.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                    } catch (Throwable x) {
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseMessage> call, Throwable t) {
+                Log.e(TAG, "onFailure: " + t.toString());
+                Toast.makeText(RegistroUsuario.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+
+        });
+
+
+
+
+
+
+
+
     }
+
+
+
     /**
      * Permissions handler
      */
