@@ -2,6 +2,7 @@ package calificado.guerra.tecsup.edu.pe.labcalificado3.services;
 
 import java.util.List;
 
+import calificado.guerra.tecsup.edu.pe.labcalificado3.models.Denuncia;
 import calificado.guerra.tecsup.edu.pe.labcalificado3.models.Usuario;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -43,4 +44,7 @@ public interface ApiService {
             @Part MultipartBody.Part imagen
     );
 */
+
+    @GET("api/denuncia/denuncias")
+    Call<List<Denuncia>> getDenuncias();
 }
