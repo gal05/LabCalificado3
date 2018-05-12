@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="calificado.guerra.tecsup.edu.pe.labcalificado3.activities.RegistroUsuario">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tituloRU"
+            android:layout_marginTop="80px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:fontFamily="casual"
+            android:text="Registro de usuario" />
+
+        <EditText
+            android:id="@+id/ingrese_nombre_u"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre"
+            android:layout_marginTop="50px"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/ingrese_dni_u"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50px"
+            android:ems="10"
+            android:hint="dni"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/ingrese_password_u"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="50px"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/ingrese_password_u2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50px"
+            android:ems="10"
+            android:hint="Repita el password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/registrar"
+            android:layout_marginStart="300px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50px"
+            android:text="Iniciar Sesion"
+            android:onClick="registrar"/>
+
+    </LinearLayout>
+
+</LinearLayout>

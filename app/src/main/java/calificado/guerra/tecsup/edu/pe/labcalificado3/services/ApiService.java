@@ -3,6 +3,7 @@ package calificado.guerra.tecsup.edu.pe.labcalificado3.services;
 import java.util.List;
 
 import calificado.guerra.tecsup.edu.pe.labcalificado3.models.Usuario;
+import calificado.guerra.tecsup.edu.pe.labcalificado3.response.ResponseMessage;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -28,13 +29,16 @@ public interface ApiService {
 
 
 
-/*
+
     @FormUrlEncoded
-    @POST("/api/v1/productos")
-    Call<ResponseMessage> createProducto(@Field("nombre") String nombre,
-                                         @Field("precio") String precio,
-                                         @Field("detalles") String detalles);
-    @Multipart
+    @POST("/api/denuncia/usuarios")
+    Call<ResponseMessage> createUsuario(@Field("password") String password,
+                                        @Field("dni") String dni,
+                                        @Field("nombre") String nombre,
+                                        @Field("tipo") int tipo);
+
+
+/*    @Multipart
     @POST("/api/v1/productos")
     Call<ResponseMessage> createProductoWithImage(
             @Part("nombre") RequestBody nombre,

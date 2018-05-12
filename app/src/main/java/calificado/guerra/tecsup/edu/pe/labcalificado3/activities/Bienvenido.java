@@ -26,6 +26,8 @@ public class Bienvenido extends AppCompatActivity {
     public boolean verdad;
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    private static final int REGISTER_FORM_REQUEST=100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,7 +106,7 @@ public class Bienvenido extends AppCompatActivity {
 
     }
     public  void registrar(View view){
-
+        startActivityForResult(new Intent(this,RegistroUsuario.class),REGISTER_FORM_REQUEST);
     }
 
 
