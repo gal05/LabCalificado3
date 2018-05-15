@@ -9,9 +9,11 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import calificado.guerra.tecsup.edu.pe.labcalificado3.R;
+import calificado.guerra.tecsup.edu.pe.labcalificado3.activities.Bienvenido;
 import calificado.guerra.tecsup.edu.pe.labcalificado3.models.Denuncia;
 import calificado.guerra.tecsup.edu.pe.labcalificado3.services.ApiService;
 
@@ -19,8 +21,8 @@ public class DenunciaAdapter extends RecyclerView.Adapter<DenunciaAdapter.VievHo
 
     private List<Denuncia> denuncias;
 
-    public List<Denuncia> getDenuncias() {
-        return denuncias;
+    public DenunciaAdapter() {
+        this.denuncias = new ArrayList<>();
     }
 
     public void setDenuncias(List<Denuncia> denuncias) {
@@ -58,7 +60,7 @@ public class DenunciaAdapter extends RecyclerView.Adapter<DenunciaAdapter.VievHo
         Denuncia denuncia= this.denuncias.get(position);
 
         viewHolder.tituloText.setText(denuncia.getTitulo());
-        viewHolder.propietarioText.setText("Por : " + denuncia.getUsuario_id());
+        viewHolder.propietarioText.setText("Por : " + Bienvenido.The_usuario);
 
         String url = ApiService.API_BASE_URL + "/images/" + denuncia.getFoto();
         Picasso.with(viewHolder.itemView.getContext()).load(url).into(viewHolder.photo);
