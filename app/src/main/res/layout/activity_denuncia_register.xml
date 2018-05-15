@@ -32,8 +32,8 @@ android:layout_margin="16dp">
     android:maxLength="500"/>
 
 
-<TextView
-    android:id="@+id/coordenadas_show"
+<EditText
+    android:id="@+id/coordenadas_input"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"

@@ -52,12 +52,23 @@ public interface ApiService {
     @GET("api/denuncia/denuncias")
     Call<List<Denuncia>> getDenuncias();
 
+
+    @FormUrlEncoded
+    @POST("/api/denuncia/denuncias")
+    Call<ResponseMessage> createDenunciaSinPhoto(@Field("usuario_id") int usuario_id,
+                                                 @Field("titulo") String precio,
+                                                 @Field("ubicacion") String detalles,
+                                                 @Field("descripcion") String descripcion,
+                                                 @Field("estado") String ubicacion);
+
+
     @Multipart
     @POST("/api/denuncia/denuncias")
     Call<ResponseMessage> createDenunciaWithImage(
             @Part("usuario_id") RequestBody usuario_id,
             @Part("titulo") RequestBody titulo,
             @Part("ubicacion") RequestBody ubicacion,
+            @Part("descripcion") RequestBody descripcion,
             @Part("estado") RequestBody estado,
             @Part MultipartBody.Part foto
     );

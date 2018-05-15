@@ -31,6 +31,9 @@ public class Bienvenido extends AppCompatActivity {
 
     public static String The_usuario;
     public static String The_password;
+
+    public  static  int The_codigo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,15 +69,19 @@ public class Bienvenido extends AppCompatActivity {
 
                         for (Usuario usuario:usuarios){
                             if(usuario.getNombre().equals(The_usuario) && usuario.getPassword().equals(The_password)){
+                                The_codigo= usuario.getId();
                                  verdad=true;
+
                             }
                             Log.d("PRODUCTO : ",usuario.getNombre()+"  "+ usuario.getPassword());
                         }
 
                         if (verdad==true) {
                             Intent intent = new Intent(Bienvenido.this, ListaDenuncia.class);
+
                             Bienvenido.this.startActivity(intent);
                             finish();
+
                         }else{
                             Toast.makeText(Bienvenido.this, "Credenciales no validas"+The_password+" "+The_usuario, Toast.LENGTH_LONG).show();
 
