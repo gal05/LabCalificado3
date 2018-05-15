@@ -346,10 +346,6 @@ public class DenunciaRegister extends AppCompatActivity {
             }
         });
     }
-
-
-
-
-
+    
 
 }
