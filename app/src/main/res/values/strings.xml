@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">LabCalificado3</string>
     <string name="ubicaion">Ubicacion</string>
+    <string name="capturar_unbicacion">Capturar unbicacion</string>
+    <string name="en_mapa">En Mapa</string>
+    <string name="coordenadas">Coordenadas</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="titulo">Titulo</string>
 </resources>
