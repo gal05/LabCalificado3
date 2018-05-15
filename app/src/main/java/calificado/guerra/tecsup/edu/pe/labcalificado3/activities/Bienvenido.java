@@ -28,6 +28,9 @@ public class Bienvenido extends AppCompatActivity {
 
     private static final int REGISTER_FORM_REQUEST=100;
 
+
+    public static String The_usuario;
+    public static String The_password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +44,8 @@ public class Bienvenido extends AppCompatActivity {
 
     public void ingresar(View view){
 
-        final String The_usuario=ingreseUsuario.getText().toString().trim();
-         final String The_password=ingresePassword.getText().toString().trim();
+        The_usuario=ingreseUsuario.getText().toString().trim();
+        The_password=ingresePassword.getText().toString().trim();
 
         ApiService service = ApiServiceGenerator.createService(ApiService.class);
 

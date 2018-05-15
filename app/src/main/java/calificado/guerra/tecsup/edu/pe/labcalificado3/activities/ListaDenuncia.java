@@ -89,7 +89,6 @@ public class ListaDenuncia extends AppCompatActivity {
     }
 
     public void  showRegistrar(View view){
-
         startActivityForResult(new Intent(this, DenunciaRegister.class), REGISTER_FORM_REQUEST);
     }
 
