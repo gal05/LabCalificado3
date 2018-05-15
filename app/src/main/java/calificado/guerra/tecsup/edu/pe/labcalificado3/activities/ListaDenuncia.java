@@ -88,7 +88,8 @@ public class ListaDenuncia extends AppCompatActivity {
         });
     }
 
-    public void showRegiste(View view){
+    public void  showRegistrar(View view){
+
         startActivityForResult(new Intent(this, DenunciaRegister.class), REGISTER_FORM_REQUEST);
     }
 

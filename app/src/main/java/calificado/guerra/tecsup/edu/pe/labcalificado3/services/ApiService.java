@@ -51,4 +51,16 @@ public interface ApiService {
 
     @GET("api/denuncia/denuncias")
     Call<List<Denuncia>> getDenuncias();
+
+    @Multipart
+    @POST("/api/denuncia/denuncias")
+    Call<ResponseMessage> createDenunciaWithImage(
+            @Part("usuario_id") RequestBody usuario_id,
+            @Part("titulo") RequestBody titulo,
+            @Part("ubicacion") RequestBody ubicacion,
+            @Part("estado") RequestBody estado,
+            @Part MultipartBody.Part foto
+    );
+
+
 }

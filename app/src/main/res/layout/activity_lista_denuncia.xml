@@ -21,7 +21,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
-        android:onClick="showRegister"
+        android:onClick="showRegistrar"
         android:src="@android:drawable/ic_menu_add" />
 
 </RelativeLayout>
