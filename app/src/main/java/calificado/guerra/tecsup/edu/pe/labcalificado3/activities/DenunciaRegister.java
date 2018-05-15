@@ -216,6 +216,7 @@ public class DenunciaRegister extends AppCompatActivity {
             RequestBody estadoPart=RequestBody.create(MultipartBody.FORM,"0");
 
             call = service.createDenunciaWithImage(usuario_idPart, tituloPart, coordenadaPart,descripcionPart,estadoPart, imagenPart);
+
         }
         call.enqueue(new Callback<ResponseMessage>() {
 
@@ -255,6 +256,7 @@ public class DenunciaRegister extends AppCompatActivity {
             }
 
         });
+
     }
     /**
      * Permissions handler
@@ -342,10 +344,10 @@ public class DenunciaRegister extends AppCompatActivity {
                     // for ActivityCompat#requestPermissions for more details.
                     return;
                 }
-                locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+                locationManager.requestLocationUpdates("gps", 2000, 0, listener);
             }
         });
     }
-    
+
 
 }
