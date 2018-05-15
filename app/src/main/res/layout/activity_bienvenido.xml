@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Registro"
-            android:onClick="registrar"/>
+            android:onClick="registrarUser"/>
     </LinearLayout>
 
 </LinearLayout>

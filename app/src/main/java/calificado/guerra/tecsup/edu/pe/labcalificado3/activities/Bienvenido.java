@@ -115,7 +115,7 @@ public class Bienvenido extends AppCompatActivity {
        // Toast.makeText(this, "esto " + usuario+ "  y esto "+password, Toast.LENGTH_SHORT).show();
 
     }
-    public  void registrar(View view){
+    public  void registrarUser(View view){
         startActivityForResult(new Intent(this,RegistroUsuario.class),REGISTER_FORM_REQUEST);
     }
 
