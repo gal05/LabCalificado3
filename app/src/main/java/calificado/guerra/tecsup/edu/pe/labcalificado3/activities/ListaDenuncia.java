@@ -42,7 +42,7 @@ public class ListaDenuncia extends AppCompatActivity {
 
         denunciasList.setAdapter(new DenunciaAdapter());
 
-
+ 
         initialize();
     }
 
