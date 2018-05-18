@@ -33,6 +33,7 @@ public class Bienvenido extends AppCompatActivity {
     public static String The_password;
 
     public  static  int The_codigo;
+    public static  int The_tipo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,9 @@ public class Bienvenido extends AppCompatActivity {
                         for (Usuario usuario:usuarios){
                             if(usuario.getNombre().equals(The_usuario) && usuario.getPassword().equals(The_password)){
                                 The_codigo= usuario.getId();
+                                The_tipo=usuario.getTipo();
+                                Log.d("aaaaaa",The_password+The_codigo+The_tipo);
+
                                  verdad=true;
 
                             }

@@ -27,11 +27,14 @@ public class ListaDenuncia extends AppCompatActivity {
     private RecyclerView denunciasList;
 
     private static final int REGISTER_FORM_REQUEST=100;
+    private static int id_usuario=Bienvenido.The_codigo;
+    private static  int tipo_user=Bienvenido.The_tipo;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_lista_denuncia);
 
         denunciasList = findViewById(R.id.recyclerview);
@@ -45,9 +48,23 @@ public class ListaDenuncia extends AppCompatActivity {
 
     private void initialize() {
 
-        ApiService service = ApiServiceGenerator.createService(ApiService.class);
 
-        Call<List<Denuncia>> call = service.getDenuncias();
+        ApiService service = ApiServiceGenerator.createService(ApiService.class);
+        Call<List<Denuncia>> call = null;
+
+        if (tipo_user==1){
+            Log.d( "id1",String.valueOf(id_usuario));
+
+
+             call = service.getDenuncias();
+        }else if(tipo_user==0){
+            Log.d( "1d0",String.valueOf(id_usuario));
+            call=service.denuncias_x_usuario( id_usuario);
+
+        }
+
+
+
 
         call.enqueue(new Callback<List<Denuncia>>() {
             @Override
