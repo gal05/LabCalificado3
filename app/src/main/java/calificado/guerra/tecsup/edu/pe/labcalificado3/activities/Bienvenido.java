@@ -119,5 +119,5 @@ public class Bienvenido extends AppCompatActivity {
         startActivityForResult(new Intent(this,RegistroUsuario.class),REGISTER_FORM_REQUEST);
     }
 
-
+//se supone que esto debe estar en otro branch
 }
